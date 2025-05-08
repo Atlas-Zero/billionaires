@@ -10,24 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body style="background-color: #212529;">
     <div class="container bg-primary rounded">
         <h1 class="display-3 p-3 mt-3 text-center text-white">Billionaires</h1>
     </div>
-    <div class="container bg-secondary">
+    <div class="container bg-black border">
         <div class="card-body text-black mb-5">
             <canvas id="chart"></canvas>
         </div>
     </div>
 
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        /* catches and displays data on chart. Can't be moved to main.js */
+        /* fetches and renders data on chart. Can't be moved to main.js :/ */
         const fetchData = async (request) => {
-            
+
             const response = await fetch(`https://cdn.jsdelivr.net/gh/komed3/rtb-api@main/api/${request}`)
 
             if (response.ok) {
