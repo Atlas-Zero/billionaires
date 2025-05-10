@@ -23,6 +23,9 @@
     <div class="container">
         <table class="table table-dark table-striped table-hover">
             <thead>
+                <tr text->
+
+                </tr>
                 <tr>
                     <th>Rank</th>
                     <th>Name</th>
@@ -30,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr id="rank1"></tr>
+                <tr class="table-primary" id="rank1"></tr>
                 <tr id="rank2"></tr>
                 <tr id="rank3"></tr>
                 <tr id="rank4"></tr>
@@ -73,7 +76,7 @@
 
             const responseObj = await response.json()
             const prevMonth = dayjs().subtract(1, 'month').format("YYYY-MM")
-            const currTopTen = responseObj["list"][prevMonth]
+            const currTopTen = responseObj["list"][prevMonth] // this might lead to errors in the future
 
             renderTopTen(currTopTen)
         }
@@ -101,9 +104,21 @@
 
             for (let i = 0; i < 10; i++) {
                 let tableData = document.querySelector(`#rank${i + 1}`)
+
+                let uri = tt[i].uri
+                let parts = uri.split("-")
+
+                if (parts.length === 2) {
+                    // capitalize both parts
+                    let first = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
+                    let last = parts[1].charAt(0).toUpperCase() + parts[1].slice(1)
+
+                    uri = `${first}_${last}`
+                }
+
                 tableData.innerHTML += `<td>${tt[i].rank}</td`
-                tableData.innerHTML += `<td>${tt[i].uri}</td`
-                tableData.innerHTML += `<td>${tt[i].networth}</td`
+                tableData.innerHTML += `<td><a href="https://en.wikipedia.org/wiki/${uri}">${uri.replace("_", " ")}</a></td`
+                tableData.innerHTML += `<td>$${ (tt[i].networth / 1000).toFixed(3) }B</td`
             }
         }
 
