@@ -1,4 +1,4 @@
-    /* script can't be moved at the moment */
+
     const fetchData = async (request) => {
 
         const response = await fetch(`https://cdn.jsdelivr.net/gh/komed3/rtb-api@main/api/${request}`)
@@ -11,14 +11,13 @@
             alert.danger()
         }
     }
+    
 
     const getTopTen = async (request) => {
 
         const response = await fetchData(request)
         const responseObj = await response.json()
 
-        //let latest = await fetchData("latest")
-        //latest = await latest.json()
         let latest = await (await fetchData("latest")).text();
         const prevMonth = dayjs().subtract(1, 'month').format("YYYY-MM")
         console.log(prevMonth);
@@ -62,9 +61,9 @@
                 uri = `${first}_${last}`
             }
 
-            tableData.innerHTML += `<td>${tt[i].rank}</td`
-            tableData.innerHTML += `<td><a href="https://en.wikipedia.org/wiki/${uri}">${uri.replace("_", " ")}</a></td`
-            tableData.innerHTML += `<td>$${ (tt[i].networth / 1000).toFixed(3) }B</td`
+            tableData.innerHTML += `<td>${tt[i].rank}</td>`
+            tableData.innerHTML += `<td><a href="https://en.wikipedia.org/wiki/${uri}">${uri.replace("_", " ")}</a></td>`
+            tableData.innerHTML += `<td>$${ (tt[i].networth / 1000).toFixed(3) }B</td>`
         }
     }
 
@@ -97,5 +96,12 @@
         })
     }
 
-    getTopTen("stats/top10")
-    getTotal("stats/total")
+getTopTen("stats/top10")
+getTotal("stats/total")
+
+
+async function latestWinnersPrc(request) {
+    data = await fetchData("movers/pct/winner/latest")
+    data = await data.json()
+    console.log(data)
+}
