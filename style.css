@@ -2,3 +2,15 @@
     text-align: center;
     align-items: center;
 }
+button.invis-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit; /* Parent color to match the table */
+    font: inherit;
+    cursor: pointer;
+}
+button.invis-button:hover {
+    text-decoration: underline;
+}

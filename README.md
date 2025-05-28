@@ -6,3 +6,5 @@ A responsive website made with Bootstrap :)
 - [API](https://github.com/komed3/rtb-api) made by [komed3](https://github.com/komed3)
 
 - [Bootstrap](https://getbootstrap.com/)
+
+# TODO's:
