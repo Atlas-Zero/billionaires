@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billionairs</title>
+    <title>Billionaires</title>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,14 +22,26 @@
     <div class="container bg-primary border-info rounded">
         <h1 class="display-3 p-3 mt-3 text-center text-white">Billionaires</h1>
     </div>
+    <div
+        <ul
+        class="container nav nav-tabs"
+        id="navId"
+        role="tablist"
+        >
+        <a class="nav-item nav-link active" href="index.html" data-bs-toggle="tab" aria-current="page">Top10</a>
+        <a class="nav-item nav-link" href="totalList.html" role="button">Total List</a>
+        <a class="nav-item nav-link" href="" role="button">Total Winner</a>
+        <a class="nav-item nav-link" href="" role="button">Total Loser</a>
+        <a class="nav-item nav-link" href="totalChart.html" role="button">Total Chart</a>
+        </ul>
+    </div>
 
     <div class="container rounded text-white" id="intro">
-        <h2> W e l c o m e ! </h2>
-        <h2> See todays top 10 billionaires </h2>
-        <a class="btn btn-primary" href="total.html" role="button">Total List</a>
-        <a class="btn btn-primary" href="total.html" role="button">Total Chart</a>
+        <h2> W e l c o m e !</h2>
+        <h2> At the moment you see <br> this months top 10 billionaires &#129351 </h2>
     </div>
-bs
+    
+    
     <div class="container">
         <table class="table table-dark table-striped table-hover">
             <thead>
@@ -51,11 +63,10 @@ bs
                 <tr id="rank9"></tr>
                 <tr id="rank10"></tr>
             </tbody>
-
         </table>
     </div>
 
-    <script src="main.js"></script>
+    <script src="index.js"></script>
 
 </body>
 </html>
