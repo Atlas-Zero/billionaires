@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,8 @@
         crossorigin="anonymous"></script>
     <script src=" https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -22,49 +24,54 @@
     <div class="container bg-primary border-info rounded">
         <h1 class="display-3 p-3 mt-3 text-center text-white">Billionaires</h1>
     </div>
-
-    <div>
-        <ul
-            class="container nav nav-tabs"
-            id="navId"
-            role="tablist"
+    <div
+        class="container nav nav-tabs"
+        id="navId"
+        role="tablist"
         >
         <ul class="container nav nav-tabs" id="navId" role="tablist">
             <a class="nav-item nav-link" href="../index.html" role="button">Total Chart</a>
-            <a class="nav-item nav-link" href="../topTen/topTen.html" role="button">Top10</a>
-            <a class="nav-item nav-link active" href="../totalList/totalList.html" data-bs-toggle="tab" aria-current="page">Total List</a>
+            <a class="nav-item nav-link active" href="../topTen/topTen.html" data-bs-toggle="tab" aria-current="page">Top10</a>
+            <a class="nav-item nav-link" href="../totalList/totalList.html"  role="button">Total List</a>
             <a class="nav-item nav-link" href="../totalWinner/totalWinner.html" role="button">Total Winner</a>
             <a class="nav-item nav-link" href="../totalLoser/totalLoser.html" role="button">Total Loser</a>
         </ul>
     </div>
 
-    <div class="container" id="countryTable">
+    <div class="container rounded text-white" id="intro">
+        <h2 style="text-align: center;"> Here is a showcase of <br> this months top 10 billionaires &#129351 </h2>
+    </div>
+    
+    <div class="container">
         <table class="table table-dark table-striped table-hover">
             <thead>
-                <th>Country Shorthand</th>
-                <th>Country Name</th>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Networth</th>
+                </tr>
             </thead>
-
-            <tbody id="countries">
+            <tbody>
+                <tr class="table-primary" id="rank1"></tr>
+                <tr id="rank2"></tr>
+                <tr id="rank3"></tr>
+                <tr id="rank4"></tr>
+                <tr id="rank5"></tr>
+                <tr id="rank6"></tr>
+                <tr id="rank7"></tr>
+                <tr id="rank8"></tr>
+                <tr id="rank9"></tr>
+                <tr id="rank10"></tr>
             </tbody>
-
         </table>
+
+        <button class="btn btn-success" id="playButton">Play</button>
+        <button class="btn btn-danger" id="stopButton">Stop</button>
+        <button class="btn btn-secondary" id="resetButton">Reset</button>
+        <span id="currentMonth" class="text-white fs-5"></span>
     </div>
 
-    <div class="container" id="nameTable" style="display: none;">
-        <table class="table table-dark table-striped table-hover">
-            <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-            </thead>
-
-            <tbody id="billionaire">
-            </tbody>
-
-        </table>
-    </div>
-    <script src="totalList.js"></script>
+    <script src="topTen.js"></script>
 
 </body>
-
 </html>
