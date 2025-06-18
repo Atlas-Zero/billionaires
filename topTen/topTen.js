@@ -74,8 +74,6 @@ const renderTopTen = (topTen, currentMonth) => {
 const startAutoCycle = () => {
     if (intervalId) return; // Prevent multiple intervals
 
-    currentMonthIndex = 0; // Always start from beginning
-
     intervalId = setInterval(() => {
         if (currentMonthIndex >= sortedMonths.length) {
             stopAutoCycle();
@@ -98,7 +96,7 @@ const stopAutoCycle = () => {
 const resetCycle = () => {
     clearInterval(intervalId);
     intervalId = null;
-
+    currentMonthIndex = 0;
     const latestMonth = sortedMonths[sortedMonths.length - 1];
 
     const topTen = calculateChange(latestMonth);  // <-- HIER
